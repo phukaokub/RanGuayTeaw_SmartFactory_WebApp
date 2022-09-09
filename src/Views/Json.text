@@ -1,0 +1,11 @@
+{
+    "id":"1",
+    "createdAt":"2020-04-14T00:02:59.753Z",
+    "name":"Awesome Metal Tuna",
+    "description":"Lorem ipsum dolor sit amet,consectetur adipiscing elit. Ut interdum urna nec eleifend aliquet. Aliquam erat volutpat.",
+    "price":"116.00",
+    "images":[{"id":"1","productId":"1","createdAt":"2020-04-14T17:02:48.574Z","imageUrl":"https://picsum.photos/350/256"},
+        {"id":"61","productId":"1",
+        "createdAt":"2020-04-14T06:44:45.238Z",
+        "imageUrl":"https://picsum.photos/350/256"}]
+}
