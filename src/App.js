@@ -3,6 +3,7 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './Views/About';
+import Test from './Views/Test';
 import Home from './Views/Home';
 import{
   BrowserRouter as Router,
@@ -17,11 +18,12 @@ function App() {
       <Router>
         <Header />
 
-        <div className='p-3 animation'>
+        <div className='p-3 animation z-0'>
           <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/about' element={<About/>}/>
+            {/* <Route path='/' element={<Home/>}/> */}
+            <Route path='/About' element={<About/>}/>
             <Route path='/products/:id' element={<Product/>}/>
+            <Route path='/test' element={<Test/>}/>
           </Routes>
         </div>
           <Footer />

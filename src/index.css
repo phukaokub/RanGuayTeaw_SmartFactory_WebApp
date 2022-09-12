@@ -18,6 +18,46 @@ body {
     animation: spin 2s linear infinite;
 }
 
+.bg-header{
+    background: #09264C;
+}
+
+.ranguayteaw{
+    padding-left: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+p {
+    margin-left: 80%;
+    margin-top: -50%;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 50;
+    line-height: 1.5;
+    display: inline-flex;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+    margin-left: 5%;
+    display: inline-block;
+}
+.container {
+    display: flex;
+    align-items: center;
+  }
+
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 /* Safari */
 @-webkit-keyframes spin {
     0% { -webkit-transform: rotate(0deg); }
