@@ -1,5 +1,5 @@
 .sectionitems{
-    position: fixed;
+    position: absolute;
     max-width: 80%;
     width: 600px;
     left: 0;
@@ -34,13 +34,13 @@
 }
 
 .box{
-    position: fixed;
+    position: absolute;
     width: 100%;
     max-width: 10%;
     height: 100%;
     max-height: 38px;
     left: 10%;
-    top: 30%;
+    
 
     background: #FFFFFF;
     border: 5px solid #09264C;

@@ -3,20 +3,32 @@ import React, {useState} from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import {Grid, TextField, Button} from '@mui/material';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 function About(){
+    const [order,setOrder] = useState([]);
     const handleGet = event =>{
         event.preventDefault();
-        alert("Your are clicking")
-        // var requestOptions = {
-        //     method: 'GET',
-        //     redirect: 'follow'
-        //   };
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+          };
           
-        //   fetch("http://localhost:8080/user", requestOptions)
-        //     .then(response => response.text())
-        //     .then(result => console.log(result))
-        //     .catch(error => console.log('error', error));
+          fetch("/user", requestOptions)
+            .then(response => {
+                return response.json()
+            })
+            .then(result => {
+                console.log(result)
+                setOrder(result)
+            })
+            .catch(error => console.log('error', error));
         }
     const handleSubmit = event => {
         event.preventDefault();
@@ -30,7 +42,7 @@ function About(){
         "red": red,
         "blue": blue,
         "yellow": yellow,
-        "status": "Waiting"
+        "status": "waiting"
         });
 
         var requestOptions = {
@@ -40,7 +52,7 @@ function About(){
         redirect: 'follow'
         };
 
-        fetch("http://localhost:8080/user",requestOptions)
+        fetch("/user",requestOptions)
         .then(response => response.json())
         .then(result =>{
             alert(result['lastInsertRowid'])
@@ -58,14 +70,16 @@ function About(){
     const [purple,setPurple] = useState('');
     return(  
         <div className="z-0">
-            {/* <h1 class='sectionitems'>Section 1 : noodlesorting </h1>
+            <h1 class='sectionitems'>Section 1 : noodlesorting </h1>
             <img src={process.env.PUBLIC_URL+"images/factory.png"} alt="Factory" class="responsive factoryimg"></img>
-            <span className="box boxfont text-center">
-                <p1 className="text-xs xs:text-xl">Add-Order</p1>
-            </span> */}
             <React.Fragment>
                 <CssBaseline />
-                <Container sx={{pt:30}}>
+                <Container sx={{pt:21}}>
+                <span className="box boxfont text-center">
+                    <p1 className="text-xs xs:text-xl">Add-Order</p1>
+                    </span>
+                </Container>
+                <Container sx={{pt:7}}>
                     <form onSubmit={handleSubmit}>
                         <Grid>
                             <Grid item xs={12} sm={6}>
@@ -114,6 +128,44 @@ function About(){
                             <Button type="submit" label="submit" variant='contained' fullWidth required> Get </Button>
                         </Grid>
                     </form>
+                    <Grid>
+                    <TableContainer component={Paper}>
+                        <Table sx={{ minWidth: 650 }} aria-label="Order Table">
+                            <TableHead>
+                            <TableRow>
+                                <TableCell>User</TableCell>
+                                <TableCell align="right">Time</TableCell>
+                                <TableCell align="right">purple</TableCell>
+                                <TableCell align="right">green</TableCell>
+                                <TableCell align="right">red</TableCell>
+                                <TableCell align="right">blue</TableCell>
+                                <TableCell align="right">yellow</TableCell>
+                                <TableCell align="right">Status</TableCell>
+                            </TableRow>
+                            </TableHead>
+                            <TableBody>
+                            {order.map(order => (
+                                <TableRow
+                                key={order.user}
+                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                >
+                                <TableCell component="th" scope="row">
+                                    {order.user}
+                                </TableCell>
+                                <TableCell align="right">{order.time}</TableCell>
+                                <TableCell align="right">{order.purple}</TableCell>
+                                <TableCell align="right">{order.green}</TableCell>
+                                <TableCell align="right">{order.red}</TableCell>
+                                <TableCell align="right">{order.blue}</TableCell>
+                                <TableCell align="right">{order.yellow}</TableCell>
+                                <TableCell align="right">{order.status}</TableCell>
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                        </TableContainer>
+                    </Grid>
+                    
                 </Container>
             </React.Fragment>
         </div>

@@ -3,8 +3,7 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './Views/About';
-import Test from './Views/Test';
-import Home from './Views/Home';
+// import Home from './Views/Home';
 import{
   BrowserRouter as Router,
   Routes,
@@ -23,7 +22,6 @@ function App() {
             {/* <Route path='/' element={<Home/>}/> */}
             <Route path='/About' element={<About/>}/>
             <Route path='/products/:id' element={<Product/>}/>
-            <Route path='/test' element={<Test/>}/>
           </Routes>
         </div>
           <Footer />
