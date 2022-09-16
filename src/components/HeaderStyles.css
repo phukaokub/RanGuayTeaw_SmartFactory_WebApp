@@ -1,0 +1,108 @@
+.HeaderItems{
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    /* border-radius: 13px; */
+    /* transform: translate(-50%); */
+}
+
+.logo{
+    justify-self: start;
+    cursor:pointer;
+}
+
+.nav-menu{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 30px;
+    list-style:none;
+    align-items:center;
+    text-align:center;
+    justify-content:end;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.space-rap{
+    white-space: nowrap;
+}
+
+.nav-links i{
+    padding-right: 10px;
+}
+
+.nav-links:hover{
+    background: white;
+    border-radius: 4px ;
+    transition: all 0.2s ease-in-out;
+    --tw-text-opacity: 1;
+    color: rgb(9 38 76 / var(--tw-text-opacity));
+}
+
+.fa-bars,
+.fa-times{
+    color: white;
+}
+
+.menu-icons{
+    display:none;
+}
+
+.nav-links-mobile{
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    background-color: #fafafa;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+
+@media screen and (max-width: 850px){
+    .HeaderItems{
+        z-index: 99;
+    }
+
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: rgb(255, 255, 255, 0.35);
+        box-shadow: 0 8px 32px 0 rgba(31,38,135, 0.5);
+        backdrop-filter: blur(4px);
+        border-radius: 13px;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: -110%;
+        align-items: stretch;
+        padding: 80px 0 30px 0;
+        margin: 0; 
+        z-index: 10;
+        transition:all 0.5s ease-in-out;
+
+    }
+
+    .nav-menu.active{
+        left:0%;
+    }
+
+    .nav-links{
+        display:block;
+        widows:100%;
+        padding: 2rem 0;
+        color:#222;;
+    }
+
+    .nav-links:hover{
+        background: rgba(255,255,255,0.25);
+        backdrop-filter: blur(20px);
+    }
+    .menu-icons{
+        display: block;
+    }
+}
+
