@@ -225,13 +225,7 @@ export default function Home(){
             </Select>
             </Item>
           </Grid>
-          
-          <form onSubmit={handleGet}>
-          <Grid item xs={4}>
-            <Item>
-              <Button type="submit" label="submit" size='small' variant="contained" >View</Button></Item>
-          </Grid>
-          </form>
+        
           </Grid>
           <Grid item xs={5}>
             <Grid container
